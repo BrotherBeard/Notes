@@ -5,7 +5,7 @@
     {
       char a[]="hello markdown";
       printf("%s",a);
-    } *
+    } 
 
 ![shitingting](http://bebrother.com/beloved/images/cute-tt.jpg)
 
