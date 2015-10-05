@@ -1,11 +1,6 @@
 > # hello-markdown
 
-     #include <stdio.h>
-    int main()
-    {
-      char a[]="hello markdown";
-      printf("%s",a);
-    } 
-
-
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
 > *email address:* &emsp;&emsp;&emsp;<Otobelikethee@bebrother.com>  
