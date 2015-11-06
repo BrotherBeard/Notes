@@ -1,5 +1,5 @@
 ## javascript notes
-1. ```reverse array ```
+1. **reverse array** 
 
          function reverseArray (array) {  
    	     var temp;	 
