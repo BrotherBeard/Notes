@@ -3,7 +3,7 @@
 ### scp  ( cpoy files btween two linux server. )
 * local-->server
 > copy file
-`scp local_file user@host:remote_dir/remote_filename
+`scp local_file user@host:remote_dir/remote_filename`
 > copy files recursively
 `scp -r local_dir user@host:remote_dir`	
 * server-->local
