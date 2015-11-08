@@ -36,4 +36,28 @@ n >> file      | the same as above
 n>&m           | merge the output file of n and m 
 n<&m           | merge the input file if n and m 
 
+### xargs
+used in pipe,it will take the output list as the input args and execute the command, every arg,execute
+> pipe usage: 
+1) ls | wc -l
+2) ls | xargs wc -l
+3) find . -name tt | xargs wc -l
 
+### uniq
+> uniq -d file *duplicate line*
+  uniq -u file *unduplicate line*
+
+### join 
+> join -t symbol file1 file2
+
+### paste 
+> paste -d symbol pas1 pas2 
+
+### cut
+> cut -d symbol -f num file  *take the symbol as the separator,and cut out the num separator's field*
+
+### diff
+> diff file1 file2 *< in file1 but not file2 > in file2 but not file1*
+
+### sort
+> sort -nr file
