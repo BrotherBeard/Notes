@@ -1,6 +1,6 @@
 # Linux notes
 
-1. ### scp  ( copy files between two linux server. )
+### 1. scp  ( copy files between two linux server. )
 * local-->server
 
 > 
