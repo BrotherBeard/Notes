@@ -24,4 +24,16 @@ file type           |        file symbol              |  default action
 stdin(标准输入文件) |               0                 | unix program read from it defaultly
 stdout(标准输出文件)|               1                 | unix program write to it defaultly
 stderr(标准错误文件)|               2                 | unix program write error mesgs to it defaultly
---------------------------------------------------------------------------------------------
+
+> ### redirection command lists
+command        | instructions
+---------------|-------------
+command > file | redirect output into file 
+command < file | redirect input into file
+command >> file| redirect append output into file
+n > file       | the same as above
+n >> file      | the same as above
+n>&m           | merge the output file of n and m 
+n<&m           | merge the input file if n and m 
+
+
