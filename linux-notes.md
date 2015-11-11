@@ -51,7 +51,9 @@ pipe usage:
 > join -t symbol file1 file2
 
 ### paste 
-> paste -d symbol pas1 pas2 
+> paste -d symbol pas1 pas2
+> ls | paste -d ":" - - - -      //输出结果按分号进行分隔，每行四列 
+> paste -s pas1 pas2             // 列输出转为行输出
 
 ### cut
 > cut -d symbol -f num file  \/\**take the symbol as the separator,and cut out the num separator's field*\*\/
