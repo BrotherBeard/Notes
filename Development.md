@@ -31,11 +31,26 @@
  2. Wireshark tools && tcpdump command 
 ```
 
+### Web Server
+
+```
+ 1. lighttpd
+ 2. nginx
+```
+
 ### Cipher Science
 
 ```
  1. focus on security self
  2. fundamental security knowledge
+```
+
+### Database
+
+```
+ 1. Mysql
+ 2. MongoDB
+ 3. Redis / Memcache
 ```
 
 ### Version Control tools
