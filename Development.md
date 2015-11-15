@@ -38,11 +38,18 @@
  2. fundamental security knowledge
 ```
 
+### Version Control tools
+
+```
+ 1. Git 
+```
+
 ### Excellent Reference source
 
 ```
  1. ACM and other thesis (professional)
  2. weekly magazine
+ 3. healthy and continued Reading (English version first)
 ```
 
 
