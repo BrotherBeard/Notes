@@ -44,8 +44,12 @@ pipe usage:
 3) find . -name tt | xargs wc -l
 
 ### uniq
-> uniq -d file \/\**duplicate line*\*\/
-  uniq -u file \/\**unduplicate line*\*\/
+> uniq -d file \/\**duplicate line*\*\/  -D //输出多行
+  uniq -u file \/\**unduplicate line*\*\/  mysql distinct
+  uniq -s num
+  uniq -w 
+  uniq -f --skip-fields
+  uniq -i --ignore-case
 
 ### join 
 > join -t symbol file1 file2
