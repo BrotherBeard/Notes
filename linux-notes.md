@@ -91,4 +91,7 @@ pipe usage:
 > cut -c 3  //character
 > cut -d ":" -f 1   -d: delimiter -f : field
 
-
+### awk: time function
+> mktime(YYYY MM DD HH MM SS) 
+> strftime([format [,timestamp])
+> systime() fetch timestamp from 1970-1-1 to now
