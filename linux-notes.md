@@ -67,3 +67,7 @@ pipe usage:
 
 ### sort
 > sort -nr file
+> sort -t '' -k1 -k2 file  /\*sort by k 1 ,if field 1 is same then sort by k 2\*/
+> sort -nk2 -u file  /\* -u can only follow -k field.\*/
+> sort -k 1.1,1.1 file  /\*sort by the first character of k1.\*/
+> sort .....  -o output_file  is different form sort ..... > output_file   /\* redirection will cause error\*/
