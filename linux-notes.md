@@ -71,3 +71,24 @@ pipe usage:
 > sort -nk2 -u file  /\* -u can only follow -k field.\*/
 > sort -k 1.1,1.1 file  /\*sort by the first character of k1.\*/
 > sort .....  -o output_file  is different form sort ..... > output_file   /\* redirection will cause error\*/
+
+### grep
+> grep abc file
+> grep -o abc file /\*only output the part matched\*/ 
+> grep -E "/reg/" file /\*正则匹配\*/
+> grep -v "xxx" file  //verbose
+> grep "xxx" file --color=auto
+>grep -r "xxxx" . /\*recursive match\*/
+
+### column :used to format its output
+> column -s '|' -t /\*replace the '|' with \t . -s specific the delimiter '|' \*/
+> column -t /\*columns are delimited with whitespace by default,so it can be replaced with '\t' \*/
+
+###  cut 
+> cut -b 3   //byte
+> cut -b -3     // bytes beteween 0 and 3
+> cut -b 3-5,7  //bytes between 3 and 5 ,the seventh byte
+> cut -c 3  //character
+> cut -d ":" -f 1   -d: delimiter -f : field
+
+
