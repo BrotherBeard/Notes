@@ -95,3 +95,52 @@ pipe usage:
 > mktime(YYYY MM DD HH MM SS) 
 > strftime([format [,timestamp])
 > systime() fetch timestamp from 1970-1-1 to now
+
+### awk : fetch the external variable
+* normal
+> test='awk code'
+> echo | awk '{print test}' test="$test"
+* BEGIN block
+> test='awk code'
+> echo | awk =v test="$test" 'BEGIN{print test}'
+* ENVIRON Variable
+> awk 'BEGIN{for (i in ENVIRON) {print i"="ENVIRON[i];}}'    /\* use the variable of awk :ENVIRON\*/
+
+### awk : String function
+* sub
+> usage: sub函数默认匹配整条记录，最大，最靠左边的子字符串，并用替换字符串替换这些字符串。只发生在第一次匹配的时候。
+> sub(regular expression, substitution string)
+> sub(regular expression, substitution string, target string)
+
+> example:
+> awk '{sub(/test/, "mytest")};print}' file
+> awk '{sub(/test/, "mytest",$1);print}' file
+
+* gsub
+> usage: gsub在整个文档中进行匹配
+
+* index
+> usage: index函数返回子字符串第一次被匹配的位置 index(string, target string)
+> awk '{print index("test", "mytest")}' file
+
+* length
+> usage: length返回记录的字符数
+
+* substr
+> usage: substr函数返回从位置1开始的子字符串，如果制定长度超过实际长度，则返回整个字符串
+> substr(string,starting position)
+> substr(string,starting position,length of string)
+
+* match
+> usage: match函数返回在字符串中正则表达式位置的索引，找不到则返回0，内建变量：RSTART：子字符串开始位置  RLENGTH：为到字符串结尾的字符个数
+> match(string, regular expression)
+> awk '{start=match("this is test",/[a-z]+$/);print start,RSTART,RLENGTH}'
+
+* split
+> usage: split函数按指定的分隔符把字符串分割为数组，如无分隔符，则按当前的FS进行分割
+> split(string, array [, field separator])
+ 
+
+
+### eval  scan twice and explain the shell variable
+> eval命令将会首先扫描命令行进行所有的替换，然后再执行命令。该命令使用于那些一次扫描无法实现其功能的变量。该命令对变量进行两次扫描。这些需要进行两次扫描的变量有时候被称为复杂变量
