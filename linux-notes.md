@@ -108,37 +108,37 @@ pipe usage:
 
 ### awk : String function
 * sub
-> usage: sub函数默认匹配整条记录，最大，最靠左边的子字符串，并用替换字符串替换这些字符串。只发生在第一次匹配的时候。
+> usage: sub函数默认匹配整条记录，最大，最靠左边的子字符串，并用替换字符串替换这些字符串。每行中只发生在第一次匹配的时候。  
 > sub(regular expression, substitution string)
 > sub(regular expression, substitution string, target string)
 
 > example:
-> awk '{sub(/test/, "mytest")};print}' file
+> awk '{sub(/test/, "mytest")};print}' file  
 > awk '{sub(/test/, "mytest",$1);print}' file
 
 * gsub
 > usage: gsub在整个文档中进行匹配
 
 * index
-> usage: index函数返回子字符串第一次被匹配的位置 index(string, target string)
+> usage: index函数返回子字符串第一次被匹配的位置 index(string, target string)  
 > awk '{print index("test", "mytest")}' file
 
 * length
 > usage: length返回记录的字符数
 
 * substr
-> usage: substr函数返回从位置1开始的子字符串，如果制定长度超过实际长度，则返回整个字符串
-> substr(string,starting position)
+> usage: substr函数返回从位置1开始的子字符串，如果制定长度超过实际长度，则返回整个字符串  
+> substr(string,starting position)  
 > substr(string,starting position,length of string)
 
 * match
-> usage: match函数返回在字符串中正则表达式位置的索引，找不到则返回0，内建变量：RSTART：子字符串开始位置  RLENGTH：为到字符串结尾的字符个数
-> match(string, regular expression)
-> awk '{start=match("this is test",/[a-z]+$/);print start,RSTART,RLENGTH}'
+> usage: match函数返回在字符串中正则表达式位置的索引，找不到则返回0，内建变量：RSTART：子字符串开始位置  RLENGTH：为到字符串结尾的字符个数  
+> match(string, regular expression)  
+> awk '{start=match("this is test",/[a-z]+$/);print start,RSTART,RLENGTH}'  
 
 * split
 > usage: split函数按指定的分隔符把字符串分割为数组，如无分隔符，则按当前的FS进行分割
-> split(string, array [, field separator])
+> split(string, array [, field separator])  
  
 
 
