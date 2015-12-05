@@ -1,6 +1,6 @@
 ## javascript notes
 1. **reverse array** 
-```
+```javascript
 function reverseArray (array) {  
 	var temp;	 
 	var l = array.length - 1;
