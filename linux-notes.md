@@ -140,7 +140,15 @@ pipe usage:
 > usage: split函数按指定的分隔符把字符串分割为数组，如无分隔符，则按当前的FS进行分割
 > split(string, array [, field separator])  
  
+* awk 赋值与BEGIN PROCESS END
 
+> awk 'BEGIN {...}{...}END {...}' file a=1  //END操作之前
+> awk 'BEGIN {...}{...}END {...}' a=1 file  //正常处理之前
+> awk 'BEGIN {...}{...}END {...}' file_1 a=1 file_2  //同上
+> awk -v a=1 'BEGIN {...}{...}END {...}' file   //BEGIN操作之前
+
+
+   
 
 ### eval  scan twice and explain the shell variable
 > eval命令将会首先扫描命令行进行所有的替换，然后再执行命令。该命令使用于那些一次扫描无法实现其功能的变量。该命令对变量进行两次扫描。这些需要进行两次扫描的变量有时候被称为复杂变量
