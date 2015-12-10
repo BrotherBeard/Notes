@@ -7,7 +7,7 @@ function reverseArray (array) {
 	for ( var i = 0; i < array.length / 2;  i++) {
 		temp = array[i];
 		array[i] = array[l - i];
-		array[l-i] = temp;
+		array[l - i] = temp;
 	}
 }
 ```		 

@@ -1,6 +1,6 @@
 # Notes
 
-1. _Development.md_ : 
-2. _LBS-interview_ : LBS interview (trainee)
-3. _javascript-notes.md_ : something interesting js realization
-
+1. *Development.md* : my Development plan
+2. *LBS-interview* : LBS interview (trainee)
+3. *javascript-notes.md* : something interesting javascript raw function by myself
+4. *linux-notes.md* : linux usual command's collections 
