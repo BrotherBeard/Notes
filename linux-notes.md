@@ -68,6 +68,7 @@ pipe usage:
 ### sort
 > sort -nr file
 > sort -t '' -k1 -k2 file  /\*sort by k 1 ,if field 1 is same then sort by k 2\*/
+> sort -t $'\t' /\*seperated by tab multi-character seperator.\*/
 > sort -nk2 -u file  /\* -u can only follow -k field.\*/
 > sort -k 1.1,1.1 file  /\*sort by the first character of k1.\*/
 > sort .....  -o output_file  is different form sort ..... > output_file   /\* redirection will cause error\*/
@@ -77,6 +78,7 @@ pipe usage:
 > grep -o abc file /\*only output the part matched\*/ 
 > grep -E "/reg/" file /\*正则匹配\*/
 > grep -v "xxx" file  //verbose
+> grep -c "xxx" file //count of matches
 > grep "xxx" file --color=auto
 >grep -r "xxxx" . /\*recursive match\*/
 
@@ -90,6 +92,11 @@ pipe usage:
 > cut -b 3-5,7  //bytes between 3 and 5 ,the seventh byte
 > cut -c 3  //character
 > cut -d ":" -f 1   -d: delimiter -f : field
+### split
+> split [-b|-l]   //bytes or line
+> split -a suffix length
+> split -d //number
+> split -a 2 -d -l 100 file _ //the last argument is prefix specifiction
 
 ### awk: time function
 > mktime(YYYY MM DD HH MM SS) 
@@ -102,7 +109,7 @@ pipe usage:
 > echo | awk '{print test}' test="$test"
 * BEGIN block
 > test='awk code'
-> echo | awk =v test="$test" 'BEGIN{print test}'
+> echo | awk -v test="$test" 'BEGIN{print test}'
 * ENVIRON Variable
 > awk 'BEGIN{for (i in ENVIRON) {print i"="ENVIRON[i];}}'    /\* use the variable of awk :ENVIRON\*/
 
@@ -147,8 +154,10 @@ pipe usage:
 > awk 'BEGIN {...}{...}END {...}' file_1 a=1 file_2  //同上
 > awk -v a=1 'BEGIN {...}{...}END {...}' file   //BEGIN操作之前
 
-
-   
-
 ### eval  scan twice and explain the shell variable
 > eval命令将会首先扫描命令行进行所有的替换，然后再执行命令。该命令使用于那些一次扫描无法实现其功能的变量。该命令对变量进行两次扫描。这些需要进行两次扫描的变量有时候被称为复杂变量
+
+### shopt  //shell user operation options
+> shopt [-s|-u]
+  huponexit off etc.
+
