@@ -3,13 +3,11 @@
 ### 1. scp  ( copy files between two linux server. )
 * local-->server
 
-> 
 `scp local_file user@host:remote_dir/remote_filename`  
 `scp -r local_dir user@host:remote_dir`	
 
 * server-->local
 
->
 `scp user@host:remote_dir/remote_file /local/local_dir`  
 `scp -r user@host:/.../remote_dir /local/local_dir/`
 
@@ -25,7 +23,7 @@ stdin(标准输入文件) |               0                 | unix program read 
 stdout(标准输出文件)|               1                 | unix program write to it defaultly
 stderr(标准错误文件)|               2                 | unix program write error mesgs to it defaultly
 
-> ### redirection command lists
+#### 3.1 redirection command lists
 command        | instructions
 ---------------|-------------
 command > file | redirect output into file 
@@ -155,9 +153,11 @@ pipe usage:
 > awk -v a=1 'BEGIN {...}{...}END {...}' file   //BEGIN操作之前
 
 ### eval  scan twice and explain the shell variable
-> eval命令将会首先扫描命令行进行所有的替换，然后再执行命令。该命令使用于那些一次扫描无法实现其功能的变量。该命令对变量进行两次扫描。这些需要进行两次扫描的变量有时候被称为复杂变量
+
+eval命令将会首先扫描命令行进行所有的替换，然后再执行命令。该命令使用于那些一次扫描无法实现其功能的变量。该命令对变量进行两次扫描。这些需要进行两次扫描的变量有时候被称为复杂变量
 
 ### shopt  //shell user operation options
-> shopt [-s|-u]
+```
+  shopt [-s|-u]
   huponexit off etc.
-
+```
