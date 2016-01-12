@@ -144,6 +144,64 @@ split -a 2 -d -l 100 file _  //the last argument is prefix specifiction
   x. huponexit off etc.
 ```
 
+### ` (反引号)
+
+```
+allow to assign the output of command to specific variable
+```
+
+### math calculation
+
+#### 1. expr
+
+```
+  expr 1+5
+  expr 1 \* 2
+  ```
+  
+#### 2. $[ operation ]  //assign the result of operation to the specific variable
+
+```
+  var=3
+  var1=$[$var * 2]
+  echo $var1
+```
+
+#### 3. floating calculation
+   
+```   
+   bg: the second cannot deal with the foat type well
+   1. bc command
+
+    bc -q  //ignore the welcome infomation
+    scale=4  // 4 means the length of decimal
+    i.e: bc -q
+         3.44 / 5
+         0
+         scale=4
+         3.44 / 5
+         .6880
+         quit
+   2. use bc in shell-script
+
+    `echo "options;expression" | bc`
+    var1=`echo "scale=4; 3.44 / 5" | bc`
+    echo the answer is $var1
+```
+
+### shell check the exit status
+
+> $? //save the exit status of last command's result
+> 0~255
+
+status|description
+------|-----------
+0     | success exit
+1     | unknown error  //illegal argument
+2     |  shell command
+126   | permition denied
+127   | unknown shell command
+
 ### awk: time function
 
 ```
