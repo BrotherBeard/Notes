@@ -39,6 +39,8 @@ Junghoo Cho 的一些相关论文，重点是他的博士论文，请参考：ht
 
 [《sed与awk》](http://www.china-pub.com/computers/common/info.asp?id=13255)
 
+也重点推荐Mendel Cooper的《高级Bash脚本编程指南》
+
 Linux编程
 	    
 推荐参考：《Beginning Linux Programming》，这是入门的好书
