@@ -185,3 +185,5 @@ var fullname = 'John Doe';var obj = {   fullname: 'Colin Ihrig',   prop: {      
 这个问题在于call()还是apply()。 如果你不知道它们之间的区别，我建设你先读一读 What’s the difference between function.call and function.apply? 下面这行代码我使用了call()，但是这个情况下apply()也会产生同样的结果：
 
 console.log(test.call(obj.prop));
+
+进程与线程的区别，怎么理解进程，线程之间是如何隔离栈地址空间，如何共享堆地址空间
