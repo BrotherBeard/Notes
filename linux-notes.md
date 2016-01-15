@@ -357,3 +357,90 @@ shell符号的使用
 3. () subshell 
 4. [] and [[]]  string comparation
 
+特殊情况
+
+1. 在linux中，文件和目录名中可以包含空格，所以 [ -d "$file" ] ，需要以双引号将$file括起来，以免报错:  too many arguments
+2. 
+
+```shell
+#!/bin/bash
+#changing the IFS value
+IFS.OLD=$IFS
+IFS=$'\n'
+for entry in `cat /etc/passwd`
+do
+    echo "values in $entry -"
+    IFS=:
+    for value in $entry
+    do
+        echo "    $value"
+    done
+done
+```
+
+shift 可以帮助操作命令行参数，移动命令行参数
+
+```shell
+while [ -n "$1" ]
+do 
+    case "$1" in
+    -a) echo "found the -a option" ;;
+    -b) echo "found the -b option" ;;
+    *) echo "" ;;
+    esac
+    shift
+done
+```
+Read
+
+接受从（标准输入）键盘以及另一个文件符的输入
+
+```shell
+read name
+echo $name
+
+1） 直接在read命令行指定提示符
+
+read -P "Enter your name " name
+echo $name
+
+2）指定一个定时器，过期后，该命令行返回一个非零退出状态吗 
+
+if read -t 5 -P "Enter your name" name
+then
+echo "Hello $name"
+else
+echo "sorry,timeout"
+fi
+
+3）限制输入的字符个数
+
+read -n1 -P "Do you want to continue [Y/N]?" answer
+case $answer in
+Y|y)
+echo "fine,continue on";;
+N|n)
+echo "Ok,good bye";;
+
+4）隐藏方式读取
+
+read -s -P "Enter your password:" passwd
+echo "is this your password $passwd?"
+
+5）从文件中获取
+
+cat test | while read line
+do
+    echo "$line"
+done
+
+
+while read line 
+do 
+    echo "$line"
+done < test
+
+ps: read命令行如果不指定变量的话，默认将它收到的所有数据都放进特殊环境变量REPLY
+
+```
+
