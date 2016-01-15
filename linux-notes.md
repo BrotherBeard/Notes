@@ -309,3 +309,20 @@ eval命令将会首先扫描命令行进行所有的替换，然后再执行命�
 ```
 /dev/null is a special file in linux, any output data(streams) will be deleted transparently
 ```
+### shell glob and local variable 
+
+#### bash will create two subshell to run the command between symbol "|"
+
+> test1.sh
+
+```shell
+#!/bin/sh
+
+i=0
+for file in "$@"; do
+        while read line; do
+                let i++
+        done < $file
+done
+echo $i
+```
