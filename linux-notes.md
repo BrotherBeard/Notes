@@ -311,7 +311,7 @@ eval命令将会首先扫描命令行进行所有的替换，然后再执行命�
 ```
 ### shell glob and local variable 
 
-#### bash will create two subshell to run the command between symbol "|"
+#### bash will create two subshell to run the command between symbol "|",Bash在实现pipeline(管道|)时会发起两个subshell(子shell)来运行|两边的命令，对于系统来说就是发起两个childprocess(子进程） 
 
 > test1.sh
 
@@ -326,3 +326,17 @@ for file in "$@"; do
 done
 echo $i
 ```
+> test2.sh
+
+```shell
+
+#!/bin/sh
+
+i=0
+for file in "$@"; do
+        cat $file | while read line; do
+                let i++
+        done
+done
+echo $i
+``` 
