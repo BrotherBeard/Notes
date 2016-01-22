@@ -167,3 +167,7 @@ text-align: center;
 
 //inline-block
 将对象呈递为内联对象，但是对象的内容作为块对象呈递。旁边的内联对象会被呈递在同一行内，允许空格。
+
+http://www.html5cn.org/article-6048-1.html
+http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html
+http://www.html5cn.org/article-6048-1.html
