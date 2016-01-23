@@ -4,6 +4,8 @@
 > [css学习参考](http://learn.shayhowe.com/advanced-html-css/css-transforms/)
 ### 1. CSS实现水平垂直居中
 
+> 前提：水平垂直居中，范围是在块级元素当中如何实现水平垂直居中
+
 * 块级元素水平居中
 
 ```
@@ -20,6 +22,25 @@ text-align: center;
 
 * 块级元素垂直居中
 
+```css
+<style>
+.parent {
+	position: absolute;
+    background: red;
+    width: 135px;
+    height: 100px;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+}
+.child {background: red;}
+</style>
+
+```html
+<div class="parent">
+	<span class="child">hujiaxing</span>
+</div>
+```
 
 * 行内元素垂直居中
 
