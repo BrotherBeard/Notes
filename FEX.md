@@ -10,6 +10,7 @@
 
 ```
 1. margin
+
 margin: 0 auto;
 ```
 
@@ -17,6 +18,7 @@ margin: 0 auto;
 
 ```
 1. text-align
+
 text-align: center;
 ```
 
@@ -25,7 +27,7 @@ text-align: center;
 ```css
 <style>
 .parent {
-	position: absolute;
+    position: absolute;
     background: red;
     width: 135px;
     height: 100px;
@@ -33,7 +35,9 @@ text-align: center;
     top: 0;
     bottom: 0;
 }
-.child {background: red;}
+.child {
+    background: red;
+}
 </style>
 
 ```html
@@ -89,20 +93,18 @@ margin: auto; //无限扩大，满足四个定位为0
 
 3. transform: translate(x,y)
 
+```html
 <main>
-  
   <div>
      I'm a block-level element of an unknown height and width, centered vertically within my parent.
   </div>
-  
 </main>
-
+```css
 body {
   background: #f06d06;
   font-size: 80%;
   padding: 20px;
 }
-
 main {
   position: relative;
   background: white;
@@ -142,6 +144,38 @@ line-height: 20px;
 height: 20px;
 text-align: center;
 ```
+
+### 2. Pseudo-element
+
+> 表示为某个元素的子元素，不存在于DOM树
+
+1. ::before
+
+> content属性
+> ::before is a generated content element that represents a styleable abstract first child of the respective element.
+
+2. ::after
+
+3. ::selection
+
+> The ::selection CSS pseudo-element applies rules to the portion of a document that has been highlighted
+
+4. ::first-letter
+
+> ::first-letter is a pseudo-element which selects the first letter in the first line of a block-level element (such as a paragraph <p>), if that letter is not preceded by any other content (such as images or inline tables) on its line.
+
+5. ::first-line
+
+> The ::first-line pseudo-element is similar to an inline-level element, but with certain restrictions. 
+
+6. ::placeholder
+
+>
+
+7. attr
+
+> (abbreviation for ‘attribute’) is a function that returns as a string the value of an attribute of an element.
+
 
 1. display属性有哪些可取值，分别是什么含意？
    回答：none block inline inline-block 
