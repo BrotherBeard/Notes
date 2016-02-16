@@ -12,14 +12,13 @@ function reverseArray(array) {
 }
 ```	
 
-2. **firstChild**
+2. **get firstChild**
 ```javascript
 function getFirstChild(parentNode) {
 	for (var i = 0, e;e = parentNode.childNodes[i++];) {
-		if (e.nodeType == 1) {
+		if (e.nodeType === 1) {     // 1: Element node , 2: Attribute node , 3: Text node
 			return e;
-		} else {
-			return null;
-		}
+		} 
 	}
+	return null;   // when parentNode.childNodes is []
 }
