@@ -3,11 +3,11 @@
 ```javascript
 function reverseArray(array) {  
 	var temp;	 
-	var l = array.length - 1;
-	for ( var i = 0; i < array.length / 2;  i++) {
-		temp = array[i];
-		array[i] = array[l - i];
-		array[l - i] = temp;
+	var l = arr.length - 1;
+	for ( var i = 0; i < arr.length / 2;  i++) {
+		temp = arr[i];
+		arr[i] = arr[l - i];
+		arr[l - i] = temp;
 	}
 }
 ```	
@@ -22,3 +22,31 @@ function getFirstChild(parentNode) {
 	}
 	return null;   // when parentNode.childNodes is []
 }
+
+3. **deduplicate array***
+
+> not respect IE  
+
+```javascript
+//1. use indexOf
+function deDuplicate(arr) {
+	var newArr = [];
+	var len = arr.length;
+	for (var i = 0; i < len; i++) {
+		if (newArr.indexOf(arr[i]) === -1) {
+			newArr.push(arr[i]);
+		}
+	}
+	return newArr
+}
+
+//2. use lastIndexOf
+Array.prototype.deDuplicate = function () {
+	var len = this.length;
+	for (var i = 0; i < len; i++) {
+		if (this.lastIndexOf(this[i]) !== i) {
+			this.splice(i, 1);
+		}
+	}
+}
+```
