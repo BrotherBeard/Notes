@@ -24,7 +24,7 @@ function getFirstChild(parentNode) {
 }
 ```
 
-3. **deduplicate array***
+3. **deduplicate array**
 
 > not respect IE  
 
