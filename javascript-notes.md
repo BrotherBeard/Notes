@@ -51,7 +51,7 @@ Array.prototype.deDuplicate = function () {
 	}
 }
 
-(array deduplication)[https://github.com/lifesinger/blog/issues/113]
+[array deduplication](https://github.com/lifesinger/blog/issues/113)
 //3.  replace indexOf with hash  by 玉伯
 function unique(arr) {
   var ret = []
