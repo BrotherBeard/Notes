@@ -26,5 +26,4 @@ function b () {
 //bind the function a, b
 addLoadEvent(a);
 addLoadEvent(b);
-
 //bind more functions here ...
