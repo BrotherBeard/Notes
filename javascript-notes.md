@@ -28,8 +28,10 @@ function getFirstChild(parentNode) {
 
 > not respect IE  
 
+
+* use indexOf
+
 ```javascript
-//1. use indexOf
 function deDuplicate(arr) {
 	var newArr = [];
 	var len = arr.length;
@@ -40,8 +42,11 @@ function deDuplicate(arr) {
 	}
 	return newArr
 }
+```
 
-//2. use lastIndexOf
+* use lastIndexOf
+
+```javascript
 Array.prototype.deDuplicate = function () {
 	var len = this.length;
 	for (var i = 0; i < len; i++) {
@@ -50,9 +55,13 @@ Array.prototype.deDuplicate = function () {
 		}
 	}
 }
+```
 
-[array deduplication](https://github.com/lifesinger/blog/issues/113)
-//3.  replace indexOf with hash  by 玉伯
+
+
+* replace indexOf with hash  by 玉伯 [array deduplication](https://github.com/lifesinger/blog/issues/113)
+
+```javascript
 function unique(arr) {
   var ret = []
   var hash = {}
@@ -68,11 +77,16 @@ function unique(arr) {
 
   return ret
 }
-//4. replace indexOf with hash  by wintern
-两个问题：
-1.因为哈希表没有解决冲突，所以没法区分toString相同的对象
-2.用hasOwnProperty,则不需要对IE6的Object.prototype上的名字特殊处理
+```
 
+* replace indexOf with hash  by wintern
+
+两个问题：
+
+	* 因为哈希表没有解决冲突，所以没法区分toString相同的对象
+	* 用hasOwnProperty,则不需要对IE6的Object.prototype上的名字特殊处理
+
+```javascript
 function unique(arr) {
   var ret = []
   var hash = {}
@@ -97,8 +111,11 @@ function unique(arr) {
   return ret
 }
 ....
+```
 
-//4. pure deduplicate  by 玉伯
+* pure deduplicate  by 玉伯
+
+```javascript
 function deDuplicate(arr) {
   var obj = {};
   var ret = [];
