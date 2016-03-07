@@ -129,3 +129,23 @@ function deDuplicate(arr) {
   return ret;
 }
 ```
+
+4. **insertbefore and insertAfter**
+
+* insertAfter
+
+```javascript
+function insertAfter (new, target) {
+  var parent = target.parentNode;
+  //target is the last child 
+  if (parent.lastChild == target) {
+    parent.appendChild(new);
+  }
+  else {
+    var targetSibling = target.nextSibling;  //target's next sibling
+    parent.insertBefore(new, targetSibling);
+  }
+}
+```
+
+
