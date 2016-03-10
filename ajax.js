@@ -1,7 +1,6 @@
 /**
- * 'asynchronous javascript xml' fundamentals
- * 
- * 
+ * asynchronous javascript xml
+ * @author: otobelikethee
  */
 
 //get XMLHttpRequest object
@@ -23,7 +22,7 @@ function xmlHttpRequest () {
     if (!xmlHttp) {
         console.log("browser doesn't support ajax");
     }
-    xmlHttp.open("POST","http://bebrother.com/test.php",true); // asynchronous default
+    xmlHttp.open("POST","http://bebrother.com/test.php",true); // last parameter: asynchronous default
     xmlHttp.SetRequestHeader("Content-Type","application/x-wwww-form-urlencoded");
     xmlHttp.send("name=" + encodeURIcomponent(userName));
     xmlHttp.onreadystatechange = function () {
@@ -33,7 +32,7 @@ function xmlHttpRequest () {
                 var t = document.createTextNode(this.responseText);
                 e.appendChild(t);
             } else {
-                //other's http response code : 404,403,301,302,304,500
+                //deal with other's http response code : 404,403,500, etc
             }
         } else {
             //http request continue...
