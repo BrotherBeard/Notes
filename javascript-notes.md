@@ -162,4 +162,13 @@ function getNextElement (node) {
 }
 ```
 
+6. **indexOf**
 
+```javascript
+Array.prototype.indexOf = function (v) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] === v) return i;
+    else return -1;
+  }
+}
+```
