@@ -1,8 +1,9 @@
 /**
- * usage: 60 seconds' countdown
+ * description: 60s countdown
  *
  */
-```js
+ 
+```javascript
 var obj = {t: 60};
 
 function countDown() {
