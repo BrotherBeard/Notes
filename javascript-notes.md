@@ -172,3 +172,10 @@ Array.prototype.indexOf = function (v) {
   }
 }
 ```
+
+7. **getMaxOfArray**
+
+```javascript
+Array.prototype.getMaxOfArray = function (arr) {
+  return Math.max.apply(null, arr); //
+  }
