@@ -179,6 +179,7 @@ Array.prototype.indexOf = function (v) {
 Array.prototype.getMaxOfArray = function (arr) {
   return Math.max.apply(null, arr); //
   }
+```
 
 8. **concatStr**
 
