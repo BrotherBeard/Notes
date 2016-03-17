@@ -185,8 +185,8 @@ Array.prototype.getMaxOfArray = function (arr) {
 
 ```javascript
 function concatStr (separator) {
-var args = Array.prototype.slice.call(arguments, 1);
-return args.join(separator);
+  var args = Array.prototype.slice.call(arguments, 1);
+  return args.join(separator);
 }
 //test: concatStr(',', 1, 22, 34, 32, 55);
 ```
