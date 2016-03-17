@@ -179,3 +179,14 @@ Array.prototype.indexOf = function (v) {
 Array.prototype.getMaxOfArray = function (arr) {
   return Math.max.apply(null, arr); //
   }
+
+8. **concatStr**
+
+```javascript
+function concatStr (separator) {
+var args = Array.prototype.slice.call(arguments, 1);
+return args.join(separator);
+}
+//test: concatStr(',', 1, 22, 34, 32, 55);
+```
+
