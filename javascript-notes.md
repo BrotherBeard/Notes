@@ -191,3 +191,18 @@ function concatStr (separator) {
 //test: concatStr(',', 1, 22, 34, 32, 55);
 ```
 
+9. **Function.prototype.bind**
+
+```javascript
+Function.prototype.bind = function () {
+  var args = arguments;
+  var specified = arguments[0];
+  var func = this;
+  return function () {
+    var arg = Array.prototype.slice.call(args, 1);
+    func.apply(specified, arg);
+    };
+}
+//make a good use of closure ,call and apply 
+```
+
