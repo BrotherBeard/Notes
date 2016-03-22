@@ -199,8 +199,9 @@ Function.prototype.bind = function () {
   var specified = arguments[0];
   var func = this;
   return function () {
-    var arg = Array.prototype.slice.call(args, 1);
-    func.apply(specified, arg);
+    var slice = Array.prototype.slice;
+    var arg = slice.call(args, 1);
+    func.apply(specified, arg.concat(slice.call(arguments)));
     };
 }
 //make a good use of closure ,call and apply 
