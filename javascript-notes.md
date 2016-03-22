@@ -207,3 +207,24 @@ Function.prototype.bind = function () {
 //make a good use of closure ,call and apply 
 ```
 
+10. **Fibonacci**
+
+> refer to the code of <<javascript good parts>> 
+
+```javascript
+function fibonacci () {
+  var m = [0, 1, 1];
+  var fib = function (n) {
+    var result = m[n];
+    if (typeof result !== 'number') {
+      result = fib(n - 1) + fib(n - 2);
+      m[n] = result; // store the result of calculated 
+      }
+    return result;
+    };
+  return fib;
+}
+
+//test
+var f = fibnacci();
+console.log(f(3)); // output is 2
