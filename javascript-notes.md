@@ -228,3 +228,23 @@ function fibonacci () {
 //test
 var f = fibnacci();
 console.log(f(3)); // output is 2
+```
+
+11 **leftPad**
+
+```javascript
+function leftPad (str, len, ch) {
+  str = String(str);
+  /**
+   * todo:  1. 判断str类型，建议弱类型直接转换成String，对异常情况过滤: [Object Object] [1,2] => 1,2 以及 function () {} 
+   *        2. 判断ch类型  数字 0-9 字符串长度为1
+   *        3. len >= str.length吧~~~
+   */
+  if (!(typeof ch === 'string' && ch.length === 1) && !(typeof ch === 'number' && ch >= 0 && ch <= 9))
+    ch = ' ';
+    while (str.length < len) {
+      str = ch + str;
+    }
+    return str;
+}
+```
