@@ -230,7 +230,7 @@ var f = fibnacci();
 console.log(f(3)); // output is 2
 ```
 
-11 **leftPad**
+11. **leftPad**
 
 ```javascript
 function leftPad (str, len, ch) {
