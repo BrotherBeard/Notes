@@ -232,6 +232,7 @@ console.log(f(3)); // output is 2
 
 11. **leftPad**
 
+> bad   time complexity : O(N)
 ```javascript
 function leftPad (str, len, ch) {
   str = String(str);
@@ -248,3 +249,27 @@ function leftPad (str, len, ch) {
     return str;
 }
 ```
+
+> good, the core algorithm is the same as that used by the `repeat` method of ES6  : String.prototype.repeat(count) 
+> time complexity: O(logN)
+
+```javascript
+function leftPad (str, len, ch) {
+  str = '' + str;
+  if (!ch && ch !== 0 ) ch = ' ';
+  
+  var l = len - str.length;
+  if (l <= 0) return str;
+  
+  var padStr = l & 1 ? ch : '';
+  
+  while (l >>= 1) {
+    ch += ch;
+    if (l & 1) {
+      padStr += ch;
+    }
+  }
+  return padStr + str;
+}
+```
+
