@@ -275,3 +275,49 @@ function leftPad (str, len, ch) {
 }
 ```
 
+12. **fetch the object inner closure**
+
+> define an method for the prototype
+
+```javascript
+var o = (function () {
+  var j = {
+    name: 'otobelikethee',
+    faith: 'Jesus'
+  };
+  return {
+    run: function (k) {
+      return j[k];
+  }
+  };
+}());
+
+//Object.defineProperty(obj, prop,descriptor)   //j.__proto__ = null  unefficient
+Object.defineProperty(Object.prototype, 'self', {
+  get: function () {
+    return this;
+  },
+  configurable: true
+});
+
+console.log(o.run('self'));
+```
+
+13. **flatten the array**
+
+> [1,2,[3,4],[5,[6,7,8]]]
+
+```javascript
+function flattenArray (arr) {
+  if (!isArray(arr) || !arr.length) {
+    return [];
+  }
+  return Array.prototype.concat([], arr.map(function (ele) {
+  return isArray(ele)?flattenArray(ele):ele;
+  }));
+}
+function isArray (arr) {
+  return Object.prototype.toString.call(arr).slice(8,-1).toLowerCase() === 'array';
+}
+//iterate the array if (isArray){...}else newArr.push(ele);
+```
