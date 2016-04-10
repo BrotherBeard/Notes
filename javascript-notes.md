@@ -312,7 +312,7 @@ function flattenArray (arr) {
   if (!isArray(arr) || !arr.length) {
     return [];
   }
-  return Array.prototype.concat([], arr.map(function (ele) {
+  return Array.prototype.concat.apply([], arr.map(function (ele) {
   return isArray(ele)?flattenArray(ele):ele;
   }));
 }
@@ -321,3 +321,13 @@ function isArray (arr) {
 }
 //iterate the array if (isArray){...}else newArr.push(ele);
 ```
+
+14. **trim**
+
+```javascript
+String.prototype.trim = function () {
+  var regExp = new RegExp(/\s*/g);
+  return this.replace(regExp, '');
+}
+```
+
