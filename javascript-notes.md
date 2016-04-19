@@ -331,3 +331,25 @@ String.prototype.trim = function () {
 }
 ```
 
+15. **作用域、变量提升及函数提升**
+
+```javascript
+var num = 1;
+function exec () {
+num = 2;
+return;
+function num () {return 3;}
+}
+//test
+exec();
+
+var f = function (f) {
+function f () {return 1;}
+return f();
+function f () {return 3;}
+f = 2;
+}
+//test
+f();
+```
+
