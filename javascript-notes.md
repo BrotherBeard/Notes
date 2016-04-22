@@ -1,5 +1,5 @@
 ## javascript native methods' realization
-1. **reverse array** 
+**reverse array** 
 ```javascript
 function reverseArray(array) {  
 	var temp;	 
@@ -12,7 +12,7 @@ function reverseArray(array) {
 }
 ```	
 
-2. **get firstChild**
+**get firstChild**
 ```javascript
 function getFirstChild(parentNode) {
 	for (var i = 0, e;e = parentNode.childNodes[i++];) {
@@ -24,7 +24,7 @@ function getFirstChild(parentNode) {
 }
 ```
 
-3. **deduplicate array**
+**deduplicate array**
 
 > not respect IE  
 
@@ -130,7 +130,7 @@ function deDuplicate(arr) {
 }
 ```
 
-4. **insertbefore and insertAfter**
+**insertbefore and insertAfter**
 
 * insertAfter
 
@@ -148,7 +148,7 @@ function insertAfter (new, target) {
 }
 ```
 
-5. **getNextElement**
+**getNextElement**
 
 ```javascript
 function getNextElement (node) {
@@ -162,7 +162,7 @@ function getNextElement (node) {
 }
 ```
 
-6. **indexOf**
+**indexOf**
 
 ```javascript
 Array.prototype.indexOf = function (v) {
@@ -173,7 +173,7 @@ Array.prototype.indexOf = function (v) {
 }
 ```
 
-7. **getMaxOfArray**
+**getMaxOfArray**
 
 ```javascript
 Array.prototype.getMaxOfArray = function (arr) {
@@ -181,7 +181,7 @@ Array.prototype.getMaxOfArray = function (arr) {
   }
 ```
 
-8. **concatStr**
+**concatStr**
 
 ```javascript
 function concatStr (separator) {
@@ -190,8 +190,8 @@ function concatStr (separator) {
 }
 //test: concatStr(',', 1, 22, 34, 32, 55);
 ```
-
-9. **Function.prototype.bind**
+ 
+**Function.prototype.bind**
 
 ```javascript
 Function.prototype.bind = function () {
@@ -207,7 +207,7 @@ Function.prototype.bind = function () {
 //make a good use of closure ,call and apply 
 ```
 
-10. **Fibonacci**
+**Fibonacci**
 
 > refer to the code of <<javascript good parts>> 
 
@@ -230,7 +230,7 @@ var f = fibnacci();
 console.log(f(3)); // output is 2
 ```
 
-11. **leftPad**
+**leftPad**
 
 > bad, time complexity : O(N)
 
@@ -275,7 +275,7 @@ function leftPad (str, len, ch) {
 }
 ```
 
-12. **fetch the object inner closure**
+**fetch the object inner closure**
 
 > define an method for the prototype
 
@@ -303,7 +303,7 @@ Object.defineProperty(Object.prototype, 'self', {
 console.log(o.run('self'));
 ```
 
-13. **flatten the array**
+**flatten the array**
 
 > [1,2,[3,4],[5,[6,7,8]]]
 
@@ -322,7 +322,7 @@ function isArray (arr) {
 //iterate the array if (isArray){...}else newArr.push(ele);
 ```
 
-14. **trim**
+**trim**
 
 ```javascript
 String.prototype.trim = function () {
@@ -331,7 +331,7 @@ String.prototype.trim = function () {
 }
 ```
 
-15. **作用域、变量提升及函数提升**
+**作用域、变量提升及函数提升**
 
 ```javascript
 var num = 1;
@@ -353,7 +353,7 @@ f = 2;
 f();
 ```
 
-16. **m项和**
+**m项和**
 
 ```javascript
 function add (src) {
@@ -365,6 +365,7 @@ function add (src) {
         result += n;
         n = Math.sqrt(n);
       }
-      return result.toFixed(2);}
+      return result.toFixed(2);
+      }
 ```
 
