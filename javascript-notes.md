@@ -353,3 +353,18 @@ f = 2;
 f();
 ```
 
+16. **m项和**
+
+```javascript
+function add (src) {
+  var obj = src.split(' ');
+  var n = parseInt(obj[0]);
+  var m = parseInt(obj[1]);
+  var result = 0;
+  for (var i = 0; i < m; i++) {
+        result += n;
+        n = Math.sqrt(n);
+      }
+      return result.toFixed(2);}
+```
+
